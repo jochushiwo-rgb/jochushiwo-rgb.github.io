@@ -31,6 +31,17 @@
     z-index: 10; position: relative;
     /* 加上這行：讓卡片內容平均分配，才不會因為字變多往下擠 */
     display: flex; flex-direction: column; justify-content: space-between;
+}.card { 
+    background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(10px); 
+    padding: 20px; border-radius: 30px; border: 3px solid #ffb6c1; 
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3); text-align: center; 
+    
+    /* 修正寬度：改回 90%，並加上 box-sizing: border-box 讓 padding 不會擠壓寬度 */
+    width: 90%; max-width: 400px; min-height: 520px; box-sizing: border-box; 
+    
+    z-index: 10; position: relative;
+    /* 維持妳原本寫的，讓內容平均分配 */
+    display: flex; flex-direction: column; justify-content: space-between;
 }
 
 
