@@ -106,7 +106,7 @@
     </div>
     
     <div class="pet-container" id="petBox">
-        <div id="pet-display">🐻‍❄️</div>
+        <div id="pet-display"><img src="./images/bear.png"></div>
         <div id="pet-msg">點擊換人，長按餵食 💕</div>
         <div id="quick-feed"></div>
     </div>
