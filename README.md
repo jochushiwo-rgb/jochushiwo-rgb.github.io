@@ -60,7 +60,13 @@
         #pet-display { font-size: 70px; user-select: none; transition: transform 0.2s; }
         #pet-display img { width: 120px; border-radius: 15px; pointer-events: none; } 
         #pet-display:active { transform: scale(0.9); }
-        #pet-msg { font-size: 14px; color: var(--d); font-weight: bold; margin-top: 10px; min-height: 45px; line-height: 1.5; }
+        ##pet-msg { 
+    font-size: 14px; color: var(--d); font-weight: bold; margin-top: 10px; 
+    /* 把原本的 45px 改成 65px */
+    min-height: 65px; 
+    line-height: 1.5; 
+}
+
 
         #quick-feed { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
@@ -118,7 +124,7 @@
     </div>
     
     <div class="pet-container" id="petBox">
-        <div id="pet-display"><img src="./images/bear.png"></div>
+        <div id="pet-display">🐻‍❄️</div>
         <div id="pet-msg">點擊換人，長按餵食 💕</div>
         <div id="quick-feed"></div>
     </div>
@@ -235,8 +241,7 @@
         currentPet = (currentPet === 'bear' ? 'rabbit' : 'bear');
         
         // 這裡預留了圖片接口，如果妳之後想換圖片，把Emoji換成 <img src="..."> 即可
-        document.getElementById('pet-display').innerHTML = (currentPet === 'bear' ? '<img src="![image](./images/bear.png)">' : '<img src="![image](./images/rabbit.png)">');// 修正！直接放路徑就好，不需要 ![image]()
-document.getElementById('pet-display').innerHTML = (currentPet === 'bear' ? '<img src="./images/bear.png">' : '<img src="./images/rabbit.png">');
+        document.getElementById('pet-display').innerHTML = (currentPet === 'bear' ? '<img src="![image](./images/bear.png)">' : '<img src="![image](./images/rabbit.png)">');
 
         
         forceCount = 0;
