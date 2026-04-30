@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
@@ -22,27 +23,11 @@
         canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 1; }
         
         .card { 
-    background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(10px); 
-    padding: 20px; border-radius: 30px; border: 3px solid #ffb6c1; 
-    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3); text-align: center; 
-    /* 修改這行：讓寬度固定，並設定一個最小高度 */
-    width: 380px; max-width: 90%; min-height: 520px; 
-    z-index: 10; position: relative;
-    /* 加上這行：讓卡片內容平均分配，才不會因為字變多往下擠 */
-    display: flex; flex-direction: column; justify-content: space-between;
-}.card { 
-    background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(10px); 
-    padding: 20px; border-radius: 30px; border: 3px solid #ffb6c1; 
-    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3); text-align: center; 
-    
-    /* 修正寬度：改回 90%，並加上 box-sizing: border-box 讓 padding 不會擠壓寬度 */
-    width: 90%; max-width: 400px; min-height: 520px; box-sizing: border-box; 
-    
-    z-index: 10; position: relative;
-    /* 維持妳原本寫的，讓內容平均分配 */
-    display: flex; flex-direction: column; justify-content: space-between;
-}
-
+            background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(10px); 
+            padding: 20px; border-radius: 30px; border: 3px solid #ffb6c1; 
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3); text-align: center; 
+            width: 90%; max-width: 380px; z-index: 10; position: relative;
+        }
 
         #notify { 
             position: absolute; top: -50px; left: 50%; transform: translateX(-50%); 
@@ -53,13 +38,7 @@
         .show-notify { top: 10px !important; opacity: 1 !important; }
 
         #rank-text { font-weight: bold; color: var(--d); font-size: 18px; margin-bottom: 5px; }
-        ##counter { 
-    font-size: 48px; font-weight: 900; color: var(--d); 
-    text-shadow: 2px 2px #ffd1dc; margin: 10px 0; 
-    /* 加上這行：鎖定數字區域高度 */
-    min-height: 60px;
-}
-
+        #counter { font-size: 48px; font-weight: 900; color: var(--d); text-shadow: 2px 2px #ffd1dc; margin: 10px 0; }
         
         .stat-bar { font-size: 12px; display: flex; justify-content: space-around; margin-bottom: 15px; color: #666; }
         
@@ -128,7 +107,7 @@
     </div>
     
     <div class="pet-container" id="petBox">
-        <div id="pet-display"><img src="./images/bear.png"></div>
+        <div id="pet-display">🐻‍❄️</div>
         <div id="pet-msg">點擊換人，長按餵食 💕</div>
         <div id="quick-feed"></div>
     </div>
@@ -245,8 +224,7 @@
         currentPet = (currentPet === 'bear' ? 'rabbit' : 'bear');
         
         // 這裡預留了圖片接口，如果妳之後想換圖片，把Emoji換成 <img src="..."> 即可
-        document.getElementById('pet-display').innerHTML = (currentPet === 'bear' ? '<img src="![image](./images/bear.png)">' : '<img src="![image](./images/rabbit.png)">');// 修正！直接放路徑就好，不需要 ![image]()
-document.getElementById('pet-display').innerHTML = (currentPet === 'bear' ? '<img src="./images/bear.png">' : '<img src="./images/rabbit.png">');
+        document.getElementById('pet-display').innerHTML = (currentPet === 'bear' ? '<img src="bear.png">' : '<img src="rabbit.png">');
 
         
         forceCount = 0;
