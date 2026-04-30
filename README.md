@@ -224,7 +224,8 @@
         currentPet = (currentPet === 'bear' ? 'rabbit' : 'bear');
         
         // 這裡預留了圖片接口，如果妳之後想換圖片，把Emoji換成 <img src="..."> 即可
-        document.getElementById('pet-display').innerHTML = (currentPet === 'bear' ? '🐻‍❄️' : '🐰');
+        document.getElementById('pet-display').innerHTML = (currentPet === 'bear' ? '<img src="bear.png">' : '<img src="rabbit.png">');
+
         
         forceCount = 0;
         updatePetTalk('switch');
